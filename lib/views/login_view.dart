@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lilac/controller/auth_controller.dart';
+import 'package:lilac/core/app_constants.dart'; // kAdminEmail, kAdminPassword, colors
 import 'package:lilac/views/buttom_nav.dart';
 import 'package:lilac/widget/form_widgets.dart';
 import 'package:provider/provider.dart';
-
-
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -37,10 +36,7 @@ class _LoginViewState extends State<LoginView> {
       _passCtrl.text = "admin123";
       _loginError = null;
     });
-    _formKey.currentState?.reset(); // clears any red validation messages
-    // reset() restores the initial (empty) text, so set it again
-    _emailCtrl.text = "admin@gmail.com";
-    _passCtrl.text ="admin123";
+    _formKey.currentState?.validate(); // clears red field messages
   }
 
   Future<void> _login() async {
@@ -51,7 +47,7 @@ class _LoginViewState extends State<LoginView> {
     final password = _passCtrl.text;
 
     // Fixed credentials (see kAdminEmail / kAdminPassword in app_constants.dart)
-    if (email != kAdminEmail || password != kAdminPassword) {
+    if (email != "admin@gmail.com" || password != "admin123") {
       setState(() => _loginError = 'Invalid email or password');
       return;
     }
