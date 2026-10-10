@@ -13,6 +13,7 @@ class PageHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final top = MediaQuery.of(context).padding.top;
     return Container(
+      width: double.infinity, // full width (was shrinking to the title width)
       color: kPrimary,
       height: top + 90,
       padding: EdgeInsets.only(top: top),
