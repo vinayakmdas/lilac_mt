@@ -7,7 +7,7 @@ const Color kExpense = Color(0xFFEB5757);
 const Color kBorder = Color(0xFFDADADA);
 const Color kMutedText = Color(0xFF6B6B6B);
 
-const String kUserName = 'Sahal Muhammed';
+const String kUserName = 'admin@gmail.com';
 const String kCurrency = '\$'; // Home / transactions
 const String kCreditCurrency = '₹'; // Credit page
 
